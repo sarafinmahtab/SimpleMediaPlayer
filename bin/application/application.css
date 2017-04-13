@@ -1,0 +1,16 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.menu-item .label {
+    -fx-text-fill: #78262E;
+}
+
+.menu-item {
+     -fx-background-color: #853b42;
+}
+
+.menu-item:focused .label {
+    -fx-text-fill: white;
+}
+
+.menu .label {
+	-fx-text-fill: white;
+}
