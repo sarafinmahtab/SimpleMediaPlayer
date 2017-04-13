@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseEntered="#mouseEntered" onMouseExited="#mouseExited" prefHeight="550.0" prefWidth="780.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <center>
+      <MediaView fx:id="mediaView" fitHeight="420.0" fitWidth="700.0" BorderPane.alignment="CENTER" />
+   </center>
+   <bottom>
+      <VBox fx:id="vbox" style="-fx-background-color: #690f17;" BorderPane.alignment="CENTER">
+         <children>
+            <Slider fx:id="timeSlider" />
+            <HBox alignment="CENTER" prefHeight="40.0" prefWidth="700.0" spacing="5.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#play" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #78262E;" text="Play" textFill="WHITE">
+                     <font>
+                        <Font size="11.0" />
+                     </font>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets></Button>
+                  <Button mnemonicParsing="false" onAction="#pause" prefWidth="55.0" style="-fx-background-color: #78262E;" text="Pause" textFill="WHITE">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#stop" prefWidth="55.0" style="-fx-background-color: #78262E;" text="Stop" textFill="WHITE">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#prevTrack" prefHeight="24.0" prefWidth="58.0" style="-fx-background-color: #78262E;" text="Previous" textFill="WHITE">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#nextTrack" prefWidth="55.0" style="-fx-background-color: #78262E;" text="Next" textFill="WHITE">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#fast" prefWidth="55.0" style="-fx-background-color: #78262E;" text="Fast" textFill="WHITE">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#slow" prefWidth="55.0" style="-fx-background-color: #78262E;" text="Slow" textFill="WHITE">
+                     <font>
+                        <Font size="11.0" />
+                     </font></Button>
+                  <HBox alignment="CENTER" prefHeight="40.0" prefWidth="171.0" spacing="2.0">
+                     <children>
+                        <Label fx:id="volumeLabel" prefHeight="17.0" prefWidth="33.0" text="Vol." textFill="WHITE" />
+                        <Slider fx:id="volumeSilder" prefHeight="14.0" prefWidth="124.0">
+                           <effect>
+                              <ColorAdjust />
+                           </effect>
+                        </Slider>
+                     </children>
+                     <padding>
+                        <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                     </padding>
+                  </HBox>
+                  <Label fx:id="durationLabel" alignment="CENTER" prefHeight="20.0" prefWidth="85.0" text="Duration" textAlignment="CENTER" textFill="WHITE" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </bottom>
+   <top>
+      <MenuBar fx:id="menuBar" prefHeight="26.0" prefWidth="700.0" style="-fx-background-color: #78262E;" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #78262E;" text="File">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#fileChooser" text="Open Media" />
+              <MenuItem mnemonicParsing="false" onAction="#exit" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #78262E;" text="Edit" />
+            <Menu mnemonicParsing="false" style="-fx-background-color: #78262E;" text="Playlist">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#playlist" text="Open" />
+              </items>
+            </Menu>
+          <Menu mnemonicParsing="false" style="-fx-background-color: #78262E;" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>
